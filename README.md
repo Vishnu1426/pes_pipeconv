@@ -78,7 +78,7 @@ module dual_port_ram_tb;
 endmodule
 ```
 
-Testbench 
++ Testbench 
 ```
 // Dual Port RAM testbench
 
