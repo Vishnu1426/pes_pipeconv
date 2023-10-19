@@ -1,6 +1,6 @@
 # PES_DUAL_PORT_DESIGN
 
-+ Design
++ Design Module
 ```
 // Dual Port RAM testbench
 
@@ -78,7 +78,7 @@ module dual_port_ram_tb;
 endmodule
 ```
 
-Testbench
+Testbench 
 ```
 // Dual Port RAM testbench
 
@@ -156,40 +156,57 @@ module dual_port_ram_tb;
 endmodule
 ```
 
-
++ To simulate the HDL code before simulation enter the following command
+```
 iverilog dual_port_design.v dual_port_tb.v
+```
++ To generate the .vcd file type the following command
+```
 ./a.out
+```
++ To view the simulation waveform type the following command
+```
 gtkwave dump.vcd
+```
 
 ![image](https://github.com/Vishnu1426/pes_ram_design/assets/79538653/1cd39e48-6ae6-45b8-96f7-c261f9410e8d)
 
-Pre-Synthesis Waveform
++ Pre-Synthesis Waveform looks like this
 ![image](https://github.com/Vishnu1426/pes_ram_design/assets/79538653/3bafac69-209b-4d20-9c83-66956fb84486)
 
 
-
++ RTL Synthesis
++ Open yosys and read the .lib file. Then read the verilog file and synthesize the top module.
+```
 read_liberty -lib sky130_fd_sc_hd__tt_025C_1v80.lib
 read_verilog dual_port_design.v
 synth -top pes_ram_design
+```
 
 ![image](https://github.com/Vishnu1426/pes_ram_design/assets/79538653/9a5b331d-217a-4d67-8b04-14d25db91b01)
 
 ![image](https://github.com/Vishnu1426/pes_ram_design/assets/79538653/0252b86b-be27-4661-9400-6a219429a0bd)
 
++ Perform the abc step by typing the following command
+```
 abc -liberty sky130_fd_sc_hd__tt_025C_1v80.lib
-
+```
 ![image](https://github.com/Vishnu1426/pes_ram_design/assets/79538653/7c571612-0eda-483e-946d-8941aa8885b5)
 
++ To view the synthesized design type the following command
+```
 show
+```
+
 ![image](https://github.com/Vishnu1426/pes_ram_design/assets/79538653/08685658-49dc-4bed-bf21-f3fc8a6221c8)
 
 ![image](https://github.com/Vishnu1426/pes_ram_design/assets/79538653/ef59bdcb-a54f-456b-a84d-bbc4fdcf42e2)
 
-The following shows that the library files have been used.
++ The following shows that the library files have been used.
 
 ![image](https://github.com/Vishnu1426/pes_ram_design/assets/79538653/91a2e1e6-0751-4e70-bfa8-055979667639)
 
-The following shows netlist simulation
++ The following shows netlist simulation
 ![image](https://github.com/Vishnu1426/pes_ram_design/assets/79538653/cb28a100-e43e-4658-8c20-1d887dd3906c)
 
 The netlist simulation has some delay compared to the pre-synthesis simulation. However the final write results are the same.
