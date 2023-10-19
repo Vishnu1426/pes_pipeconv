@@ -1,6 +1,6 @@
 # PES_DUAL_PORT_DESIGN
 
-Design
++ Design
 ```
 // Dual Port RAM testbench
 
