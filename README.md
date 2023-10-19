@@ -175,7 +175,7 @@ gtkwave dump.vcd
 ![image](https://github.com/Vishnu1426/pes_ram_design/assets/79538653/3bafac69-209b-4d20-9c83-66956fb84486)
 
 
-+ RTL Synthesis
+## RTL Synthesis
 + Open yosys and read the .lib file. Then read the verilog file and synthesize the top module.
 ```
 read_liberty -lib sky130_fd_sc_hd__tt_025C_1v80.lib
@@ -206,6 +206,7 @@ show
 
 ![image](https://github.com/Vishnu1426/pes_ram_design/assets/79538653/91a2e1e6-0751-4e70-bfa8-055979667639)
 
+## GLS
 + The following shows netlist simulation
 ![image](https://github.com/Vishnu1426/pes_ram_design/assets/79538653/cb28a100-e43e-4658-8c20-1d887dd3906c)
 
