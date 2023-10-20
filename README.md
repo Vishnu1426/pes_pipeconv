@@ -156,6 +156,7 @@ module dual_port_ram_tb;
 endmodule
 ```
 
+## RTL Simulation
 + To simulate the HDL code before simulation enter the following command
 ```
 iverilog dual_port_design.v dual_port_tb.v
@@ -175,7 +176,7 @@ gtkwave dump.vcd
 ![image](https://github.com/Vishnu1426/pes_ram_design/assets/79538653/3bafac69-209b-4d20-9c83-66956fb84486)
 
 
-## RTL Synthesis
+## Synthesis
 + Open yosys and read the .lib file. Then read the verilog file and synthesize the top module.
 ```
 read_liberty -lib sky130_fd_sc_hd__tt_025C_1v80.lib
