@@ -157,7 +157,7 @@ endmodule
 ```
 
 ## RTL Simulation
-+ To simulate the HDL code before simulation enter the following command
++ To simulate the HDL code before synthesis enter the following command
 ```
 iverilog dual_port_design.v dual_port_tb.v
 ```
