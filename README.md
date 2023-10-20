@@ -165,7 +165,7 @@ show
 
 ## GLS
 + The following shows netlist simulation
-![image](https://github.com/Vishnu1426/pes_ram_design/assets/79538653/cb28a100-e43e-4658-8c20-1d887dd3906c)
+![image](https://github.com/Vishnu1426/pes_ram_design/assets/79538653/90331fba-516a-43ae-8e27-7e882d12aed9)
 
 The netlist simulation has some delay compared to the pre-synthesis simulation. However the final write results are the same.
-![image](https://github.com/Vishnu1426/pes_ram_design/assets/79538653/a14f7c53-62e4-4106-a2b2-5caef2e9ff1c)
+![image](https://github.com/Vishnu1426/pes_ram_design/assets/79538653/a9ac330c-4e57-4f9c-ab9f-dabe51a5cd87)
