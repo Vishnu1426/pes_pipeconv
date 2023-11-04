@@ -246,8 +246,8 @@ make install
 ### Using OpenLane
 <details>
 <summary>Creating design directory</summary>
-
 <blockhead>
+  
 + Create your design folder through openlane. Change the <my_design_name> to the your verilog design name.
 ```
 cd
@@ -283,8 +283,12 @@ dir::src/<design>.v
 </blockhead>
 </details>
 
-# Running a basic automated flow of the Openlane
+### Running a basic automated flow of the Openlane
 
+<details>
+<summary>Running Automated Flow</summary>
+<blockhead>
+  
 + Type the following to start the automated openlane flow in the tab where openlane container was opened using docker
 ```
 ./flow.tcl -design openlane/<design_folder_name> -tag <name_for_a_specific_run>
@@ -292,28 +296,56 @@ dir::src/<design>.v
 ![Screenshot from 2023-11-04 22-33-14](https://github.com/Vishnu1426/pes_ram_design/assets/79538653/418614c6-ddd2-42fc-9966-647e524fecd7)
 
 + Make sure you change the 'pes_ram_design' to your design file name before executing the command. Also make sure you change the name of the openlane run before executing the command.
+</blockhead>
+</details>
+
+<details>
+<summary>Checking for negative slack</summary>
+<blockhead>
+  
 + After running the automated flow, check for slack in a file called '2-syn_sta.summary' or a similar sta summary file in the following location
 ```
 /home/vishnu/OpenLane/openlane/pes_ram_design/runs/run_3_auto/reports/synthesis
 ```
 
 + As it can be seen from the sta summary, the slack is positive and therefore no timing violations. Therefore no need to do slack correction by replacing cells.
+
 ![Screenshot from 2023-11-04 22-41-22](https://github.com/Vishnu1426/pes_ram_design/assets/79538653/aab54a4a-2fa8-4f7a-9723-85de10099221)
 
+</details> 
+</blockhead>
 
-# Running the Interactive OpenLane
+### Running the Interactive OpenLane
+
+<details>
+<summary>Starting Interactive Openlane</summary>
+<blockhead>
 
 + To start the OpenLane in interactive mode
 ```
 ./flow.tcl -interactive
 ```
-+ Prepare the design file for the flow
+</blockhead>
+</details>
+
+<details>
+<summary>Prepare the design file for the flow</summary>
+<blockhead>
+  
++ Type the following command to prepare design code for the flow.
 ```
 prep -design openlane/<design_folder_name> -tag <name_for_a_specific_run>
 ```
 ![Screenshot from 2023-11-04 22-44-42](https://github.com/Vishnu1426/pes_ram_design/assets/79538653/0dc00922-db84-4043-b2c5-cc54e61c3b01)
 
-+ Synthesis - Type the following to perform synthesis of the design
+</blockhead>
+</details>
+
+<details>
+<summary>Synthesis</summary>
+<blockhead>
+  
++ Type the following to perform synthesis of the design
 ```
 run_synthesis
 ```
@@ -327,6 +359,8 @@ run_synthesis
 + As it can be seen from the sta log, slack is positive and therefore there are not timing violations
 ![Screenshot from 2023-11-04 22-48-31](https://github.com/Vishnu1426/pes_ram_design/assets/79538653/5c2da2f6-431d-4458-bc71-df23089f2c47)
 
+</blockhead>
+</details>
 + Floorplan - Type the following to perform floorplan of the design
 ```
 run_floorplan
