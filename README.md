@@ -173,8 +173,77 @@ The netlist simulation has some delay compared to the pre-synthesis simulation. 
 
 ## Physical Design
 
+#Installing magic
++ Magic requires some pre requisites:
++ M4 preprocessor
+```
+sudo apt-get install m4
+```
++ python 3
+```
+sudo apt-get install python
+```
++ Xlib.h
+```
+sudo apt-get install libx11-dev
+```
++ If you wish to have the Tcl/Tk wrapper around magic (recommended) you will need to install the Tcl/Tk libraries. Version 8.5 or higher is highly recommended.
++ Tcl/Tk
+```
+sudo apt-get install tcl-dev tk-dev
+```
++ The best graphics for Magic is the OpenGL interface ("magic -d OGL"), but since that is problematic for off-screen rendering on many systems, a good alternative is the Cairo graphics interface ("magic -d XR"). This is optional, but if you want to use it, you need the Cairo library development package:
 
-+ After installing openlane
++ Cairo
+```
+sudo apt-get install libcairo2-dev 
+```
+
++ The OpenGL interface itself may need these dependencies:
+
++ OpenGL
+```
+sudo apt-get install mesa-common-dev libglu1-mesa-dev
+```
+
+For the non-Tcl/Tk version only: The readline source makes reference to the `tputs` function which is provided by the ncurses library. Although the ncurses library is installed in Ubuntu, the include files to build against it are not, so the development version is required.
+
+ncurses
+    $ sudo apt-get install libncurses-dev 
+```
++ Next part is to clone from the magic repository. Magic requires writing into hidden folders which may sometimes require using root privileges. Therefore, before cloning the magic type the following:
+```
+sudo su
+```
++ Now type in
+```
+git clone git://opencircuitdesign.com/magic
+./configure
+make
+make install
+```
+
+# Installing OpenLane
++ OpenLane needs docker to run. So that needs to be installed first. Follow the steps given in the original documentation. It is very simple - https://openlane.readthedocs.io/en/latest/getting_started/installation/installation_ubuntu.html
+
++ After installing 
++ Create your design folder through openlane. Change the <my_design_name> to the your verilog design name.
+```
+cd
+cd OpenLane
+make mount
+./flow.tcl -design <my_design_name> -init_design_config
+```
++ A folder will be created in the openlane directory. Now we need to make our design code available in the source part which is the 'src' folder in our design file. This folder is not available initially. It needs to be created. So type the following in a new tab:
+```
+cd ~/OpenLane/openlane/<my_design_name>
+mkdir src
+cd src
+gedit <design>.v
+```
++ After opening the '.v' file, paste your design code in this. This will be used as your design file.
+
++ 
 ![Screenshot from 2023-11-04 22-07-32](https://github.com/Vishnu1426/pes_ram_design/assets/79538653/4987c776-9abb-4d39-8ebf-d7650fd765ee)
 
 ![Screenshot from 2023-11-04 22-05-23](https://github.com/Vishnu1426/pes_ram_design/assets/79538653/20043bb0-64a5-4156-b941-e1b57a2ccb6a)
