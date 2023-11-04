@@ -303,7 +303,7 @@ run_floorplan
 ```
 ![Screenshot from 2023-11-04 22-50-44](https://github.com/Vishnu1426/pes_ram_design/assets/79538653/06f97712-4522-499c-9bc9-9e979b1dbc9b)
 
-+ To view the design after floorplan we can use magic
++ To view the design after floorplan we can use magic.
 + Open a new tab and type the following to go to the floorplan directory. Make sure you change the name of the design directory to your design directory.
 ```
 cd /home/vishnu/OpenLane/openlane/pes_ram_design/runs/run_4_inter/results/floorplan
@@ -316,27 +316,46 @@ magic -T /home/vishnu/.volare/sky130A/libs.tech/magic/sky130A.tech lef read ../.
 
 ![Screenshot from 2023-11-04 23-24-33](https://github.com/Vishnu1426/pes_ram_design/assets/79538653/470d44f9-a48b-428d-9b4e-8ad01ecc8615)
 
-+ Placement
-
-magic -T /home/vishnu/.volare/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.nom.lef def read pes_ram_design.def &
-
++ Placement - Type the following to perform placement of the design
+```
+run_floorplan
+```
 ![Screenshot from 2023-11-04 23-29-08](https://github.com/Vishnu1426/pes_ram_design/assets/79538653/cfc11cb5-b7cb-4882-8820-d9e5bae4e4c2)
 
++ To view the design after placement we can again use magic.
++ Open a new tab and type the following to go to the floorplan directory. Make sure you change the name of the design directory to your design directory.
+```
+cd /home/vishnu/OpenLane/openlane/pes_ram_design/runs/run_4_inter/results/placement
+magic -T /home/vishnu/.volare/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.nom.lef def read pes_ram_design.def &
+```
 ![Screenshot from 2023-11-04 23-26-52](https://github.com/Vishnu1426/pes_ram_design/assets/79538653/72c3711b-ebe4-4d96-acc7-74c599b54e32)
 
 ![Screenshot from 2023-11-04 23-28-17](https://github.com/Vishnu1426/pes_ram_design/assets/79538653/fef5e3c6-d53a-4ac6-8d1c-c1806616e6fc)
 
-+ CTS
++ CTS - Type the following to perform clock-tree-synthesis of the design
+```
+run_cts
+```
 ![Screenshot from 2023-11-04 23-34-42](https://github.com/Vishnu1426/pes_ram_design/assets/79538653/0f2a430b-e0c8-47f4-9434-f10cc6f196aa)
 
-+ Generate Power Distribution Network
++ To Generate Power Distribution Network, type the following
+```
+gen_pdn
+```
 ![Screenshot from 2023-11-04 23-35-48](https://github.com/Vishnu1426/pes_ram_design/assets/79538653/897caaa7-9104-460e-9eee-9652bfe282d3)
 
-+ Routing
++ Routing - Type the following to perform routing of the design
+```
+run_routing
+```
 ![Screenshot from 2023-11-04 23-54-06](https://github.com/Vishnu1426/pes_ram_design/assets/79538653/8b79af8f-f658-4ea6-90bb-cef6a5506a89)
 
++ To view the design after placement we can again use magic.
++ Open a new tab and type the following to go to the floorplan directory. Make sure you change the name of the design directory to your design directory.
+```
+cd /home/vishnu/OpenLane/openlane/pes_ram_design/runs/run_4_inter/results/routing
 magic -T /home/vishnu/.volare/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.nom.lef def read pes_ram_design.def &
-
+```
 ![Screenshot from 2023-11-04 23-55-35](https://github.com/Vishnu1426/pes_ram_design/assets/79538653/6e07f62b-ac06-4958-96e7-6d39c2011f38)
 
 ![Screenshot from 2023-11-04 23-55-35](https://github.com/Vishnu1426/pes_ram_design/assets/79538653/859fc18e-f684-47da-aae3-ac6e78b0c654)
