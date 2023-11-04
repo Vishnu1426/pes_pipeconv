@@ -1,5 +1,7 @@
 # PES_DUAL_PORT_DESIGN
-
+<details>
+<summary>RTL and GLS</summary>
+  
 + Design Module
 ```
 // Dual Port RAM module design
@@ -170,10 +172,15 @@ show
 The netlist simulation has some delay compared to the pre-synthesis simulation. However the final write results are the same.
 ![image](https://github.com/Vishnu1426/pes_ram_design/assets/79538653/a9ac330c-4e57-4f9c-ab9f-dabe51a5cd87)
 
+</details>
 
 ## Physical Design
 
-#Installing magic
+### Installing magic
+<details>
+<summary>Prerequisites</summary> 
+<blockhead>
+  
 + Magic requires some pre requisites:
 + M4 preprocessor
 ```
@@ -212,6 +219,13 @@ sudo apt-get install mesa-common-dev libglu1-mesa-dev
 ```
 sudo apt-get install libncurses-dev 
 ```
+</blockhead>
+</details>
+
+<details>
+<summary>Magic installation</summary>
+<blockhead>
+  
 + Next part is to clone from the magic repository. Magic requires writing into hidden folders which may sometimes require using root privileges. Therefore, before cloning the magic type the following:
 ```
 sudo su
@@ -223,11 +237,17 @@ git clone git://opencircuitdesign.com/magic
 make
 make install
 ```
+</blockhead>  
+</details>
 
-# Installing OpenLane
+### Installing OpenLane
 + OpenLane needs docker to run. So that needs to be installed first. Follow the steps given in the original documentation. It is very simple - https://openlane.readthedocs.io/en/latest/getting_started/installation/installation_ubuntu.html
 
-# After installing 
+### Using OpenLane
+<details>
+<summary>Creating design directory</summary>
+
+<blockhead>
 + Create your design folder through openlane. Change the <my_design_name> to the your verilog design name.
 ```
 cd
@@ -237,7 +257,15 @@ make mount
 ```
 ![Screenshot from 2023-11-04 22-07-32](https://github.com/Vishnu1426/pes_ram_design/assets/79538653/4987c776-9abb-4d39-8ebf-d7650fd765ee)
 
-+ A folder will be created in the openlane directory. Now we need to make our design code available in the source part which is the 'src' folder in our design file. This folder is not available initially. It needs to be created. So type the following in a new tab:
++ A folder will be created in the openlane directory.
+</blockhead>
+</details>
+
+<details>
+<summary>Adding the design code</summary>
+<blockhead>
+  
++ Now we need to make our design code available in the source part which is the 'src' folder in our design file. This folder is not available initially. It needs to be created. So type the following in a new tab:
 ```
 cd ~/OpenLane/openlane/<my_design_name>
 mkdir src
@@ -252,6 +280,8 @@ gedit <design>.v
 dir::src/<design>.v
 ```
 ![Screenshot from 2023-11-04 22-34-44](https://github.com/Vishnu1426/pes_ram_design/assets/79538653/51719195-f351-4c35-bfa5-2521e313ec37)
+</blockhead>
+</details>
 
 # Running a basic automated flow of the Openlane
 
