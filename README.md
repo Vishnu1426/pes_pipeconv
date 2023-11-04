@@ -186,9 +186,10 @@ The netlist simulation has some delay compared to the pre-synthesis simulation. 
 
 ![image](https://github.com/Vishnu1426/pes_ram_design/assets/79538653/a1a6e28e-fc4b-4b47-b81d-05a8ae017790)
 
-
 ![image](https://github.com/Vishnu1426/pes_ram_design/assets/79538653/f07cc057-8ab3-45ad-91de-aa2d6832a51f)
 
+As it can be seen from the sta summary, the slack is positive and therefore no timing violations.
+![image](https://github.com/Vishnu1426/pes_ram_design/assets/79538653/689cc50e-eb2d-4911-a733-221e67fdae6e)
 
 
 + Interactive
@@ -196,10 +197,14 @@ The netlist simulation has some delay compared to the pre-synthesis simulation. 
 ![image](https://github.com/Vishnu1426/pes_ram_design/assets/79538653/768c040b-f4a4-47e5-82e5-8b48656b0ff6)
 
 Synthesis
-![image](https://github.com/Vishnu1426/pes_ram_design/assets/79538653/cc8f2e01-de12-4d51-9b9a-3d6bf637b53a)
+![image](https://github.com/Vishnu1426/pes_ram_design/assets/79538653/b0534ded-0335-45c9-9696-69b2a2edf67f)
 
-As it can be seen, slack is positive and therefore there are not timing violations
-![image](https://github.com/Vishnu1426/pes_ram_design/assets/79538653/1d85cac3-ffeb-4462-8f40-631f502904f9)
+As it can be seen from the sta log, slack is positive and therefore there are not timing violations
+![image](https://github.com/Vishnu1426/pes_ram_design/assets/79538653/614df3f2-b76f-446a-9c56-8ef383294d38)
+
++ Floorplan
+
+![image](https://github.com/Vishnu1426/pes_ram_design/assets/79538653/ac7b1a21-a183-4958-aba0-4a85d9cbd5c4)
 
 
 
