@@ -1,4 +1,4 @@
-# PES_DUAL_PORT_DESIGN
+# PES_DUAL_PORT_RAM_DESIGN
 <details>
 <summary>RTL and GLS</summary>
   
