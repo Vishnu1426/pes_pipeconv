@@ -1,4 +1,4 @@
-![Screenshot from 2023-11-04 23-56-13](https://github.com/Vishnu1426/pes_ram_design/assets/79538653/9e8b428c-9a83-4116-a9f6-d95d3295184e)# PES_DUAL_PORT_RAM_DESIGN
+# PES_DUAL_PORT_RAM_DESIGN
 <details>
 <summary>RTL and GLS</summary>
   
