@@ -200,25 +200,34 @@ As it can be seen from the sta log, slack is positive and therefore there are no
 + Floorplan
 ![Screenshot from 2023-11-04 22-48-31](https://github.com/Vishnu1426/pes_ram_design/assets/79538653/830264a6-8051-4f1d-8903-4541bf3585a5)
 
+![Screenshot from 2023-11-04 23-22-56](https://github.com/Vishnu1426/pes_ram_design/assets/79538653/0ae2c811-4be7-412d-838c-e6c0e5ed9332)
 
+![Screenshot from 2023-11-04 23-23-27](https://github.com/Vishnu1426/pes_ram_design/assets/79538653/34f6085e-185a-40a2-8e8f-0b497266a8d4)
 
-#OpenLane
-+ Create a folder named pes_ram_design in the designs folder (expand this into more points later)
-```
-cd OpenLane
-cd designs
-mkdir pes_ram_design
-```
-+ Enter the newly created folder
-```
-cd pes_ram_design
-```
-![image](https://github.com/Vishnu1426/pes_ram_design/assets/79538653/03b1fe5d-ea41-49e6-b119-db065002a0e0)
-+ Create a file named config.json and a directory named src
-```
-notepad.exe config.json
-mkdir src
-cd src
-```
-![image](https://github.com/Vishnu1426/pes_ram_design/assets/79538653/e3fffde9-2d9b-4af6-8f95-69b6f37addc2)
+![Screenshot from 2023-11-04 23-24-33](https://github.com/Vishnu1426/pes_ram_design/assets/79538653/470d44f9-a48b-428d-9b4e-8ad01ecc8615)
+
++ Placement
+
+magic -T /home/vishnu/.volare/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.nom.lef def read pes_ram_design.def &
+
+![Screenshot from 2023-11-04 23-29-08](https://github.com/Vishnu1426/pes_ram_design/assets/79538653/cfc11cb5-b7cb-4882-8820-d9e5bae4e4c2)
+
+![Screenshot from 2023-11-04 23-26-52](https://github.com/Vishnu1426/pes_ram_design/assets/79538653/72c3711b-ebe4-4d96-acc7-74c599b54e32)
+
+![Screenshot from 2023-11-04 23-28-17](https://github.com/Vishnu1426/pes_ram_design/assets/79538653/fef5e3c6-d53a-4ac6-8d1c-c1806616e6fc)
+
++ CTS
+![Screenshot from 2023-11-04 23-34-42](https://github.com/Vishnu1426/pes_ram_design/assets/79538653/0f2a430b-e0c8-47f4-9434-f10cc6f196aa)
+
++ Generate Power Distribution Network
+![Screenshot from 2023-11-04 23-35-48](https://github.com/Vishnu1426/pes_ram_design/assets/79538653/897caaa7-9104-460e-9eee-9652bfe282d3)
+
++ Routing
+![Screenshot from 2023-11-04 23-54-06](https://github.com/Vishnu1426/pes_ram_design/assets/79538653/8b79af8f-f658-4ea6-90bb-cef6a5506a89)
+
+magic -T /home/vishnu/.volare/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.nom.lef def read pes_ram_design.def &
+
+![Screenshot from 2023-11-04 23-55-35](https://github.com/Vishnu1426/pes_ram_design/assets/79538653/6e07f62b-ac06-4958-96e7-6d39c2011f38)
+
+![Screenshot from 2023-11-04 23-55-35](https://github.com/Vishnu1426/pes_ram_design/assets/79538653/859fc18e-f684-47da-aae3-ac6e78b0c654)
 
