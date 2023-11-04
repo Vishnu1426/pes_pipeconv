@@ -175,36 +175,30 @@ The netlist simulation has some delay compared to the pre-synthesis simulation. 
 
 
 + After installing openlane
-![image](https://github.com/Vishnu1426/pes_ram_design/assets/79538653/28c9ef41-2d5a-480a-8a09-ececb28fbf50)
+![Screenshot from 2023-11-04 22-07-32](https://github.com/Vishnu1426/pes_ram_design/assets/79538653/4987c776-9abb-4d39-8ebf-d7650fd765ee)
 
-![image](https://github.com/Vishnu1426/pes_ram_design/assets/79538653/1d9ae369-50d4-404a-83da-c85eda8316f7)
+![Screenshot from 2023-11-04 22-05-23](https://github.com/Vishnu1426/pes_ram_design/assets/79538653/20043bb0-64a5-4156-b941-e1b57a2ccb6a)
 
+![Screenshot from 2023-11-04 22-34-44](https://github.com/Vishnu1426/pes_ram_design/assets/79538653/51719195-f351-4c35-bfa5-2521e313ec37)
 
-![image](https://github.com/Vishnu1426/pes_ram_design/assets/79538653/5e2e8c8d-2926-492f-848e-5ecdd7c49bef)
-
-![image](https://github.com/Vishnu1426/pes_ram_design/assets/79538653/a7ae1fbf-ab26-483d-b5e8-1a71beccac23)
-
-![image](https://github.com/Vishnu1426/pes_ram_design/assets/79538653/a1a6e28e-fc4b-4b47-b81d-05a8ae017790)
-
-![image](https://github.com/Vishnu1426/pes_ram_design/assets/79538653/f07cc057-8ab3-45ad-91de-aa2d6832a51f)
+![Screenshot from 2023-11-04 22-33-14](https://github.com/Vishnu1426/pes_ram_design/assets/79538653/418614c6-ddd2-42fc-9966-647e524fecd7)
 
 As it can be seen from the sta summary, the slack is positive and therefore no timing violations.
-![image](https://github.com/Vishnu1426/pes_ram_design/assets/79538653/689cc50e-eb2d-4911-a733-221e67fdae6e)
+![Screenshot from 2023-11-04 22-41-22](https://github.com/Vishnu1426/pes_ram_design/assets/79538653/aab54a4a-2fa8-4f7a-9723-85de10099221)
 
 
 + Interactive
 
-![image](https://github.com/Vishnu1426/pes_ram_design/assets/79538653/768c040b-f4a4-47e5-82e5-8b48656b0ff6)
+![Screenshot from 2023-11-04 22-44-42](https://github.com/Vishnu1426/pes_ram_design/assets/79538653/0dc00922-db84-4043-b2c5-cc54e61c3b01)
 
 Synthesis
-![image](https://github.com/Vishnu1426/pes_ram_design/assets/79538653/b0534ded-0335-45c9-9696-69b2a2edf67f)
+![Screenshot from 2023-11-04 22-45-41](https://github.com/Vishnu1426/pes_ram_design/assets/79538653/8448f2ee-28d4-4de5-8236-7c390865bb5e)
 
 As it can be seen from the sta log, slack is positive and therefore there are not timing violations
-![image](https://github.com/Vishnu1426/pes_ram_design/assets/79538653/614df3f2-b76f-446a-9c56-8ef383294d38)
+![Screenshot from 2023-11-04 22-48-31](https://github.com/Vishnu1426/pes_ram_design/assets/79538653/5c2da2f6-431d-4458-bc71-df23089f2c47)
 
 + Floorplan
-
-![image](https://github.com/Vishnu1426/pes_ram_design/assets/79538653/ac7b1a21-a183-4958-aba0-4a85d9cbd5c4)
+![Screenshot from 2023-11-04 22-48-31](https://github.com/Vishnu1426/pes_ram_design/assets/79538653/830264a6-8051-4f1d-8903-4541bf3585a5)
 
 
 
