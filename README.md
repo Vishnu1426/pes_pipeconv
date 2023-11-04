@@ -169,3 +169,57 @@ show
 
 The netlist simulation has some delay compared to the pre-synthesis simulation. However the final write results are the same.
 ![image](https://github.com/Vishnu1426/pes_ram_design/assets/79538653/a9ac330c-4e57-4f9c-ab9f-dabe51a5cd87)
+
+
+## Physical Design
+
+
++ After installing openlane
+![image](https://github.com/Vishnu1426/pes_ram_design/assets/79538653/28c9ef41-2d5a-480a-8a09-ececb28fbf50)
+
+![image](https://github.com/Vishnu1426/pes_ram_design/assets/79538653/1d9ae369-50d4-404a-83da-c85eda8316f7)
+
+
+![image](https://github.com/Vishnu1426/pes_ram_design/assets/79538653/5e2e8c8d-2926-492f-848e-5ecdd7c49bef)
+
+![image](https://github.com/Vishnu1426/pes_ram_design/assets/79538653/a7ae1fbf-ab26-483d-b5e8-1a71beccac23)
+
+![image](https://github.com/Vishnu1426/pes_ram_design/assets/79538653/a1a6e28e-fc4b-4b47-b81d-05a8ae017790)
+
+
+![image](https://github.com/Vishnu1426/pes_ram_design/assets/79538653/f07cc057-8ab3-45ad-91de-aa2d6832a51f)
+
+
+
++ Interactive
+
+![image](https://github.com/Vishnu1426/pes_ram_design/assets/79538653/768c040b-f4a4-47e5-82e5-8b48656b0ff6)
+
+Synthesis
+![image](https://github.com/Vishnu1426/pes_ram_design/assets/79538653/cc8f2e01-de12-4d51-9b9a-3d6bf637b53a)
+
+As it can be seen, slack is positive and therefore there are not timing violations
+![image](https://github.com/Vishnu1426/pes_ram_design/assets/79538653/1d85cac3-ffeb-4462-8f40-631f502904f9)
+
+
+
+#OpenLane
++ Create a folder named pes_ram_design in the designs folder (expand this into more points later)
+```
+cd OpenLane
+cd designs
+mkdir pes_ram_design
+```
++ Enter the newly created folder
+```
+cd pes_ram_design
+```
+![image](https://github.com/Vishnu1426/pes_ram_design/assets/79538653/03b1fe5d-ea41-49e6-b119-db065002a0e0)
++ Create a file named config.json and a directory named src
+```
+notepad.exe config.json
+mkdir src
+cd src
+```
+![image](https://github.com/Vishnu1426/pes_ram_design/assets/79538653/e3fffde9-2d9b-4af6-8f95-69b6f37addc2)
+
