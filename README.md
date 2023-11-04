@@ -321,7 +321,7 @@ dir::src/<design>.v
 <summary>Starting Interactive Openlane</summary>
 <blockhead>
 
-+ To start the OpenLane in interactive mode
++ To start the OpenLane in interactive mode:
 ```
 ./flow.tcl -interactive
 ```
@@ -345,7 +345,7 @@ prep -design openlane/<design_folder_name> -tag <name_for_a_specific_run>
 <summary>Synthesis</summary>
 <blockhead>
   
-+ Type the following to perform synthesis of the design
++ Type the following to perform synthesis of the design.
 ```
 run_synthesis
 ```
@@ -356,7 +356,7 @@ run_synthesis
 /home/vishnu/OpenLane/openlane/pes_ram_design/runs/run_4_inter/logs/synthesis
 ```
 
-+ As it can be seen from the sta log, slack is positive and therefore there are not timing violations
++ As it can be seen from the sta log, slack is positive and therefore there are no timing violations.
 ![Screenshot from 2023-11-04 22-48-31](https://github.com/Vishnu1426/pes_ram_design/assets/79538653/5c2da2f6-431d-4458-bc71-df23089f2c47)
 
 </blockhead>
@@ -452,6 +452,6 @@ magic -T /home/vishnu/.volare/sky130A/libs.tech/magic/sky130A.tech lef read ../.
 ```
 ![Screenshot from 2023-11-04 23-55-35](https://github.com/Vishnu1426/pes_ram_design/assets/79538653/6e07f62b-ac06-4958-96e7-6d39c2011f38)
 
-![Screenshot from 2023-11-04 23-55-35](https://github.com/Vishnu1426/pes_ram_design/assets/79538653/859fc18e-f684-47da-aae3-ac6e78b0c654)
+![Screenshot from 2023-11-04 23-56-13](https://github.com/Vishnu1426/pes_ram_design/assets/79538653/f4bbf7ac-04fe-4bcb-a96a-b1acc08bc306)
 
 </blockhead></details>
