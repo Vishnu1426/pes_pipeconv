@@ -1,4 +1,4 @@
-# PES_DUAL_PORT_RAM_DESIGN
+![Screenshot from 2023-11-04 23-56-13](https://github.com/Vishnu1426/pes_ram_design/assets/79538653/9e8b428c-9a83-4116-a9f6-d95d3295184e)# PES_DUAL_PORT_RAM_DESIGN
 <details>
 <summary>RTL and GLS</summary>
   
@@ -176,7 +176,7 @@ The netlist simulation has some delay compared to the pre-synthesis simulation. 
 
 ## Physical Design
 
-### Installing magic
+### Installing magic and OpenLane
 <details>
 <summary>Prerequisites</summary> 
 <blockhead>
@@ -240,8 +240,11 @@ make install
 </blockhead>  
 </details>
 
-### Installing OpenLane
+<details><summary>Installing OpenLane</summary>
+<blockhead>
+  
 + OpenLane needs docker to run. So that needs to be installed first. Follow the steps given in the original documentation. It is very simple - https://openlane.readthedocs.io/en/latest/getting_started/installation/installation_ubuntu.html
+</blockhead></details>
 
 ### Using OpenLane
 <details>
