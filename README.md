@@ -206,10 +206,11 @@ sudo apt-get install libcairo2-dev
 sudo apt-get install mesa-common-dev libglu1-mesa-dev
 ```
 
-For the non-Tcl/Tk version only: The readline source makes reference to the `tputs` function which is provided by the ncurses library. Although the ncurses library is installed in Ubuntu, the include files to build against it are not, so the development version is required.
++ For the non-Tcl/Tk version only: The readline source makes reference to the `tputs` function which is provided by the ncurses library. Although the ncurses library is installed in Ubuntu, the include files to build against it are not, so the development version is required.
 
-ncurses
-    $ sudo apt-get install libncurses-dev 
++ ncurses
+```
+sudo apt-get install libncurses-dev 
 ```
 + Next part is to clone from the magic repository. Magic requires writing into hidden folders which may sometimes require using root privileges. Therefore, before cloning the magic type the following:
 ```
@@ -226,7 +227,7 @@ make install
 # Installing OpenLane
 + OpenLane needs docker to run. So that needs to be installed first. Follow the steps given in the original documentation. It is very simple - https://openlane.readthedocs.io/en/latest/getting_started/installation/installation_ubuntu.html
 
-+ After installing 
+# After installing 
 + Create your design folder through openlane. Change the <my_design_name> to the your verilog design name.
 ```
 cd
@@ -234,6 +235,8 @@ cd OpenLane
 make mount
 ./flow.tcl -design <my_design_name> -init_design_config
 ```
+![Screenshot from 2023-11-04 22-07-32](https://github.com/Vishnu1426/pes_ram_design/assets/79538653/4987c776-9abb-4d39-8ebf-d7650fd765ee)
+
 + A folder will be created in the openlane directory. Now we need to make our design code available in the source part which is the 'src' folder in our design file. This folder is not available initially. It needs to be created. So type the following in a new tab:
 ```
 cd ~/OpenLane/openlane/<my_design_name>
@@ -241,34 +244,72 @@ mkdir src
 cd src
 gedit <design>.v
 ```
-+ After opening the '.v' file, paste your design code in this. This will be used as your design file.
-
-+ 
-![Screenshot from 2023-11-04 22-07-32](https://github.com/Vishnu1426/pes_ram_design/assets/79538653/4987c776-9abb-4d39-8ebf-d7650fd765ee)
-
 ![Screenshot from 2023-11-04 22-05-23](https://github.com/Vishnu1426/pes_ram_design/assets/79538653/20043bb0-64a5-4156-b941-e1b57a2ccb6a)
 
++ After opening the '.v' file, paste your design code in this. This will be used as your design file.
++ There will be a config.json file in your design directory. It will look like this after you add the path to the verilog design file for the field VERILOG_FILES like below:
+```
+dir::src/<design>.v
+```
 ![Screenshot from 2023-11-04 22-34-44](https://github.com/Vishnu1426/pes_ram_design/assets/79538653/51719195-f351-4c35-bfa5-2521e313ec37)
 
+# Running a basic automated flow of the Openlane
+
++ Type the following to start the automated openlane flow in the tab where openlane container was opened using docker
+```
+./flow.tcl -design openlane/<design_folder_name> -tag <name_for_a_specific_run>
+```
 ![Screenshot from 2023-11-04 22-33-14](https://github.com/Vishnu1426/pes_ram_design/assets/79538653/418614c6-ddd2-42fc-9966-647e524fecd7)
 
-As it can be seen from the sta summary, the slack is positive and therefore no timing violations.
++ Make sure you change the 'pes_ram_design' to your design file name before executing the command. Also make sure you change the name of the openlane run before executing the command.
++ After running the automated flow, check for slack in a file called '2-syn_sta.summary' or a similar sta summary file in the following location
+```
+/home/vishnu/OpenLane/openlane/pes_ram_design/runs/run_3_auto/reports/synthesis
+```
+
++ As it can be seen from the sta summary, the slack is positive and therefore no timing violations. Therefore no need to do slack correction by replacing cells.
 ![Screenshot from 2023-11-04 22-41-22](https://github.com/Vishnu1426/pes_ram_design/assets/79538653/aab54a4a-2fa8-4f7a-9723-85de10099221)
 
 
-+ Interactive
+# Running the Interactive OpenLane
 
++ To start the OpenLane in interactive mode
+```
+./flow.tcl -interactive
+```
++ Prepare the design file for the flow
+```
+prep -design openlane/<design_folder_name> -tag <name_for_a_specific_run>
+```
 ![Screenshot from 2023-11-04 22-44-42](https://github.com/Vishnu1426/pes_ram_design/assets/79538653/0dc00922-db84-4043-b2c5-cc54e61c3b01)
 
-Synthesis
++ Synthesis - Type the following to perform synthesis of the design
+```
+run_synthesis
+```
 ![Screenshot from 2023-11-04 22-45-41](https://github.com/Vishnu1426/pes_ram_design/assets/79538653/8448f2ee-28d4-4de5-8236-7c390865bb5e)
 
-As it can be seen from the sta log, slack is positive and therefore there are not timing violations
++ To check for slack violations, check the end of a file called '2-sta.log' or a similar 'sta.log' in the followng location
+```
+/home/vishnu/OpenLane/openlane/pes_ram_design/runs/run_4_inter/logs/synthesis
+```
+
++ As it can be seen from the sta log, slack is positive and therefore there are not timing violations
 ![Screenshot from 2023-11-04 22-48-31](https://github.com/Vishnu1426/pes_ram_design/assets/79538653/5c2da2f6-431d-4458-bc71-df23089f2c47)
 
-+ Floorplan
-![Screenshot from 2023-11-04 22-48-31](https://github.com/Vishnu1426/pes_ram_design/assets/79538653/830264a6-8051-4f1d-8903-4541bf3585a5)
++ Floorplan - Type the following to perform floorplan of the design
+```
+run_floorplan
+```
+![Screenshot from 2023-11-04 22-50-44](https://github.com/Vishnu1426/pes_ram_design/assets/79538653/06f97712-4522-499c-9bc9-9e979b1dbc9b)
 
++ To view the design after floorplan we can use magic
++ Open a new tab and type the following to go to the floorplan directory. Make sure you change the name of the design directory to your design directory.
+```
+cd /home/vishnu/OpenLane/openlane/pes_ram_design/runs/run_4_inter/results/floorplan
+magic -T /home/vishnu/.volare/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.nom.lef def read pes_ram_design.def &
+```
++ This will open magic and show you the floorplan. Press 's' and then 'v' to set the design to the centre. Then keep pressing 'z' to zoom in.
 ![Screenshot from 2023-11-04 23-22-56](https://github.com/Vishnu1426/pes_ram_design/assets/79538653/0ae2c811-4be7-412d-838c-e6c0e5ed9332)
 
 ![Screenshot from 2023-11-04 23-23-27](https://github.com/Vishnu1426/pes_ram_design/assets/79538653/34f6085e-185a-40a2-8e8f-0b497266a8d4)
